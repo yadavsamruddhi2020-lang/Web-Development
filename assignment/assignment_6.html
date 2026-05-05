@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>HTML Links Example</title>
+    <style>
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 40px 0 20px;
+      }
+      .nav-btn {
+        display: inline-block;
+        padding: 12px 22px;
+        background: #0f172a;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: background 0.2s ease;
+      }
+      .nav-btn:hover {
+        background: #1e293b;
+      }
+    </style>
+</head>
+
+<body>
+
+    <h1>HTML Link Tag Demo</h1>
+    <hr>
+
+    <!-- External Link -->
+    <h2>External Link</h2>
+    <a href="https://www.google.com">Go to Google</a>
+
+    <br><br>
+
+    <!-- Open in New Tab -->
+    <h2>Open Link in New Tab</h2>
+    <a href="https://www.youtube.com" target="_blank">Open YouTube</a>
+
+    <br><br>
+
+    <!-- Internal Link -->
+    <h2>Internal Link</h2>
+    <a href="page2.html">Go to Page 2</a>
+
+    <br><br>
+
+    <!-- Email Link -->
+    <h2>Email Link</h2>
+    <a href="mailto:example@gmail.com">Send Email</a>
+
+    <br><br>
+
+    <!-- Section Link -->
+    <h2>Jump to Section</h2>
+    <a href="#section1">Go to Section 1</a>
+
+    <hr>
+
+    <h2 id="section1">Section 1</h2>
+    <p>This is the section you jumped to.</p>
+
+    <div class="nav-container">
+      <a href="assignment_5.html" class="nav-btn">Previous</a>
+      <a href="assignment_7.html" class="nav-btn">Next</a>
+    </div>
+</body>
+</html>

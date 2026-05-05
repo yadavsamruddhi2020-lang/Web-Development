@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/css" href="style.css"?>
+
+<students>
+    <student>
+        <name>Samruddhi</name>
+        <rollno>101</rollno>
+        <branch>CSE</branch>
+    </student>
+    <br></br>
+    <student>
+        <name>Rahul</name>
+        <rollno>102</rollno>
+        <branch>IT</branch>
+    </student>
+
+    <student>
+        <name>Priya</name>
+        <rollno>103</rollno>
+        <branch>ENTC</branch>
+    </student>
+</students>

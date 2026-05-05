@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Employee Registration Form</title>
+    <style>
+      .nav-container {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+        margin: 40px 0 20px;
+      }
+      .nav-btn {
+        display: inline-block;
+        padding: 12px 22px;
+        background: #0f172a;
+        color: #fff;
+        text-decoration: none;
+        border-radius: 10px;
+        transition: background 0.2s ease;
+      }
+      .nav-btn:hover {
+        background: #1e293b;
+      }
+    </style>
+</head>
+
+<body>
+
+    <h1>Employee Registration Form</h1>
+    <hr>
+
+    <form>
+
+        <!-- Personal Details -->
+        <h3>Personal Details</h3>
+
+        Full Name: <input type="text" name="name" required><br><br>
+
+        Email: <input type="email" name="email" required><br><br>
+
+        Phone: <input type="tel" name="phone"><br><br>
+
+        Gender:
+        <input type="radio" name="gender"> Male
+        <input type="radio" name="gender"> Female
+        <input type="radio" name="gender"> Other
+        <br><br>
+
+        Date of Birth:
+        <input type="date" name="dob"><br><br>
+
+        <!-- Address -->
+        <h3>Address</h3>
+
+        Address:<br>
+        <textarea name="address" rows="4" cols="30"></textarea><br><br>
+
+        City:
+        <input type="text" name="city"><br><br>
+
+        State:
+        <input type="text" name="state"><br><br>
+
+        <!-- Job Details -->
+        <h3>Job Details</h3>
+
+        Department:
+        <select name="department">
+            <option>HR</option>
+            <option>IT</option>
+            <option>Finance</option>
+            <option>Marketing</option>
+        </select><br><br>
+
+        Skills:
+        <input type="checkbox"> Communication
+        <input type="checkbox"> Programming
+        <input type="checkbox"> Management
+        <br><br>
+
+        Experience (years):
+        <input type="number" name="experience"><br><br>
+
+        Resume:
+        <input type="file"><br><br>
+
+        <!-- Login Details -->
+        <h3>Login Details</h3>
+
+        Username:
+        <input type="text" name="username"><br><br>
+
+        Password:
+        <input type="password" name="password"><br><br>
+
+        <!-- Buttons -->
+        <input type="submit" value="Register">
+        <input type="reset" value="Clear">
+
+    </form>
+
+    <div class="nav-container">
+      <a href="assignment_8.html" class="nav-btn">Previous</a>
+      <a href="assignment_10.html" class="nav-btn">Next</a>
+    </div>
+
+</body>
+</html>

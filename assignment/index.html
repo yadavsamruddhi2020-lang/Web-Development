@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+:root{
+  --bg:#0f172a;
+  --card:#111827;
+  --card2:#1e293b;
+  --text:#f8fafc;
+  --muted:#94a3b8;
+  --primary:#06b6d4;
+  --secondary:#8b5cf6;
+  --border:rgba(255,255,255,0.08);
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:linear-gradient(135deg,#020617,#0f172a,#111827);
+  color:var(--text);
+  min-height:100vh;
+  padding:40px 20px;
+  overflow-x:hidden;
+}
+
+.container{
+  max-width:1200px;
+  margin:auto;
+}
+
+.hero{
+  text-align:center;
+  margin-bottom:50px;
+}
+
+.tag{
+  display:inline-block;
+  padding:8px 18px;
+  border-radius:50px;
+  background:rgba(6,182,212,0.12);
+  border:1px solid rgba(6,182,212,0.25);
+  color:var(--primary);
+  font-size:12px;
+  letter-spacing:1px;
+  text-transform:uppercase;
+  font-weight:600;
+  margin-bottom:22px;
+}
+
+h1{
+  font-size:58px;
+  line-height:1.1;
+  margin-bottom:16px;
+  font-weight:700;
+  background:linear-gradient(90deg,#fff,var(--primary),var(--secondary));
+  -webkit-background-clip:text;
+  -webkit-text-fill-color:transparent;
+}
+
+.desc{
+  max-width:620px;
+  margin:auto;
+  color:var(--muted);
+  font-size:15px;
+  line-height:1.8;
+}
+
+.profile{
+  margin-top:28px;
+  display:inline-flex;
+  align-items:center;
+  gap:14px;
+  padding:10px 20px;
+  border-radius:60px;
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+}
+
+.avatar{
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  background:linear-gradient(135deg,var(--primary),var(--secondary));
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:700;
+  color:#fff;
+}
+
+.profile h3{
+  font-size:15px;
+}
+
+.profile p{
+  font-size:12px;
+  color:var(--muted);
+}
+
+.stats{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:20px;
+  margin:50px 0;
+}
+
+.stat{
+  background:rgba(255,255,255,0.03);
+  border:1px solid var(--border);
+  border-radius:20px;
+  padding:28px;
+  text-align:center;
+  backdrop-filter:blur(10px);
+}
+
+.stat h2{
+  font-size:34px;
+  margin-bottom:6px;
+  color:var(--primary);
+}
+
+.stat p{
+  font-size:12px;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  color:var(--muted);
+}
+
+.section-title{
+  font-size:14px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  color:var(--muted);
+  margin-bottom:24px;
+}
+
+.grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+  gap:24px;
+}
+
+.card{
+  background:linear-gradient(145deg,#111827,#1e293b);
+  border:1px solid var(--border);
+  border-radius:24px;
+  padding:24px;
+  text-decoration:none;
+  color:inherit;
+  transition:0.35s;
+  position:relative;
+  overflow:hidden;
+}
+
+.card::before{
+  content:'';
+  position:absolute;
+  width:200px;
+  height:200px;
+  background:rgba(255,255,255,0.03);
+  border-radius:50%;
+  top:-120px;
+  right:-120px;
+  transition:0.4s;
+}
+
+.card:hover{
+  transform:translateY(-8px);
+  border-color:rgba(6,182,212,0.35);
+  box-shadow:0 20px 40px rgba(0,0,0,0.4);
+}
+
+.card:hover::before{
+  transform:scale(1.2);
+}
+
+.top{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:18px;
+}
+
+.icon{
+  width:52px;
+  height:52px;
+  border-radius:16px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-size:24px;
+  background:rgba(6,182,212,0.12);
+  border:1px solid rgba(6,182,212,0.18);
+}
+
+.badge{
+  padding:5px 12px;
+  border-radius:50px;
+  font-size:11px;
+  background:rgba(255,255,255,0.05);
+  color:var(--muted);
+  border:1px solid var(--border);
+}
+
+.card h3{
+  font-size:20px;
+  margin-bottom:10px;
+}
+
+.card p{
+  color:var(--muted);
+  font-size:14px;
+  line-height:1.7;
+  margin-bottom:20px;
+}
+
+.bottom{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+}
+
+.tags{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.tag-pill{
+  font-size:11px;
+  padding:5px 10px;
+  border-radius:6px;
+  background:rgba(255,255,255,0.05);
+  border:1px solid var(--border);
+  color:var(--muted);
+}
+
+.arrow{
+  width:38px;
+  height:38px;
+  border-radius:12px;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  background:rgba(255,255,255,0.05);
+  border:1px solid var(--border);
+  transition:0.3s;
+}
+
+.card:hover .arrow{
+  background:var(--primary);
+  color:#000;
+}
+
+footer{
+  margin-top:60px;
+  text-align:center;
+  padding-top:28px;
+  border-top:1px solid var(--border);
+  color:var(--muted);
+  font-size:13px;
+  line-height:1.8;
+}
+
+footer span{
+  color:var(--primary);
+  font-weight:600;
+}
+
+@media(max-width:768px){
+
+  h1{
+    font-size:42px;
+  }
+
+  .stats{
+    grid-template-columns:1fr;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <div class="hero">
+    <div class="tag">Web Development Lab</div>
+
+    <h1>Assignment Portfolio</h1>
+
+    <p class="desc">
+      A collection of HTML & CSS assignments exploring core concepts of web development,
+      layouts, forms, navigation, multimedia, and responsive design.
+    </p>
+
+    <div class="profile">
+      <div class="avatar">PS</div>
+      <div>
+        <h3>Samruddhi Yadav</h3>
+        <p>Roll No. 19 · Web Dev</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat">
+      <h2>13</h2>
+      <p>Assignments</p>
+    </div>
+
+    <div class="stat">
+      <h2>HTML</h2>
+      <p>Primary Stack</p>
+    </div>
+
+    <div class="stat">
+      <h2>CSS</h2>
+      <p>Styling</p>
+    </div>
+  </div>
+
+  <div class="section-title">Assignments</div>
+
+  <div class="grid">
+
+    <a href="assignment_1.html" class="card">
+      <div class="top">
+        <div class="icon">🧩</div>
+        <div class="badge">Asg 01</div>
+      </div>
+
+      <h3>STATIC PAGE</h3>
+
+      <p>Introduction to basic HTML page structure, headings, paragraphs, and semantic elements.</p>
+
+      <div class="bottom">
+        <div class="tags">
+          <span class="tag-pill">HTML</span>
+          <span class="tag-pill">Structure</span>
+        </div>
+
+        <div class="arrow">↗</div>
+      </div>
+    </a>
+
+    <a href="assignment_2.html" class="card">
+      <div class="top">
+        <div class="icon">📄</div>
+        <div class="badge">Asg 02</div>
+      </div>
+
+      <h3>FORMATTING TAGS</h3>
+
+      <p>Learn how formatting tags improve text presentation, emphasis, and readability.</p>
+
+      <div class="bottom">
+        <div class="tags">
+          <span class="tag-pill">HTML</span>
+          <span class="tag-pill">Text</span>
+        </div>
+
+        <div class="arrow">↗</div>
+      </div>
+    </a>
+
+    <a href="assignment_3.html" class="card">
+      <div class="top">
+        <div class="icon">📚</div>
+        <div class="badge">Asg 03</div>
+      </div>
+
+      <h3>LIST TAGS</h3>
+
+      <p>Create ordered and unordered lists with nested items for hierarchical content structure.</p>
+
+      <div class="bottom">
+        <div class="tags">
+          <span class="tag-pill">HTML</span>
+          <span class="tag-pill">Lists</span>
+        </div>
+
+        <div class="arrow">↗</div>
+      </div>
+    </a>
+
+    <a href="assignment_4.html" class="card">
+      <div class="top">
+        <div class="icon">🖼️</div>
+        <div class="badge">Asg 04</div>
+      </div>
+
+      <h3>IMAGES USING HTML TAGS</h3>
+
+      <p>Work with image tags, alt text, sizing, and multimedia elements for richer pages.</p>
+
+      <div class="bottom">
+        <div class="tags">
+          <span class="tag-pill">HTML</span>
+          <span class="tag-pill">Media</span>
+        </div>
+
+        <div class="arrow">↗</div>
+      </div>
+    </a>
+
+    <a href="assignment_5.html" class="card">
+      <div class="top">
+        <div class="icon">🪟</div>
+        <div class="badge">Asg 05</div>
+      </div>
+
+      <h3>FRAMES</h3>
+
+      <p>Use iframes to embed external content and divide the browser into multiple content sections.</p>
+
+      <div class="bottom">
+        <div class="tags">
+          <span class="tag-pill">HTML</span>
+          <span class="tag-pill">iFrame</span>
+        </div>
+
+        <div class="arrow">↗</div>
+      </div>
+    </a>
+
+    <a href="assignment_6.html" class="card">
+      <div class="top">
+        <div class="icon">🔗</div>
+        <div class="badge">Asg 06</div>
+      </div>
+
+      <h3>LINK TAG</h3>
+
+      <p>Build HTML links with external, internal, email, and section-jump navigation.</p>
+
+      <div class="bottom">
+        <div class="tags">
+          <span class="tag-pill">HTML</span>
+          <span class="tag-pill">Links</span>
+        </div>
+
+        <div class="arrow">↗</div>
+      </div>
+    </a>
+
+    <a href="assignment_7.html" class="card">
+      <div class="top">
+        <div class="icon">📊</div>
+        <div class="badge">Asg 07</div>
+      </div>
+
+      <h3>TABLE TAGS</h3>
+
+      <p>Design structured HTML tables with headers, footers, captions, and bordered cell layouts.</p>
+
+      <div class="bottom">
+        <div class="tags">
+          <span class="tag-pill">HTML</span>
+          <span class="tag-pill">Tables</span>
+        </div>
+
+        <div class="arrow">↗</div>
+      </div>
+    </a>
+
+    <a href="assignment_8.html" class="card">
+      <div class="top">
+        <div class="icon">📚</div>
+        <div class="badge">Asg 08</div>
+      </div>
+
+      <h3>LIST TAGS</h3>
+
+      <p>Learn HTML list types with ordered, unordered, nested, and description list examples.</p>
+
+      <div class="bottom">
+        <div class="tags">
+          <span class="tag-pill">HTML</span>
+          <span class="tag-pill">Lists</span>
+        </div>
+
+        <div class="arrow">↗</div>
+      </div>
+    </a>
+
+    <a href="assignment_9.html" class="card">
+      <div class="top">
+        <div class="icon">📝</div>
+        <div class="badge">Asg 09</div>
+      </div>
+
+      <h3>REGISTRATION FORM</h3>
+
+      <p>Build a student registration form with inputs, selects, radios, and checkboxes.</p>
+
+      <div class="bottom">
+        <div class="tags">
+          <span class="tag-pill">HTML</span>
+          <span class="tag-pill">Forms</span>
+        </div>
+
+        <div class="arrow">↗</div>
+      </div>
+    </a>
+
+    <a href="assignment_10.html" class="card">
+      <div class="top">
+        <div class="icon">🎨</div>
+        <div class="badge">Asg 10</div>
+      </div>
+
+      <h3>RESUME</h3>
+
+      <p>Combine multiple HTML techniques in a polished page with structured content.</p>
+
+      <div class="bottom">
+        <div class="tags">
+          <span class="tag-pill">HTML</span>
+          <span class="tag-pill">Practice</span>
+        </div>
+
+        <div class="arrow">↗</div>
+      </div>
+    </a>
+
+    <a href="assignment_11/student.html" class="card">
+      <div class="top">
+        <div class="icon">📄</div>
+        <div class="badge">Asg 11</div>
+      </div>
+
+      <h3>XML</h3>
+
+      <p>Show XML student information in a styled HTML view using structured page layout.</p>
+
+      <div class="bottom">
+        <div class="tags">
+          <span class="tag-pill">XML</span>
+          <span class="tag-pill">HTML</span>
+        </div>
+
+        <div class="arrow">↗</div>
+      </div>
+    </a>
+
+    <a href="assignment_12/stud_output.htm" class="card">
+      <div class="top">
+        <div class="icon">🔧</div>
+        <div class="badge">Asg 12</div>
+      </div>
+
+      <h3>XSLT Transformation</h3>
+
+      <p>Display transformed XML content with XSL styling and output formatting.</p>
+
+      <div class="bottom">
+        <div class="tags">
+          <span class="tag-pill">XSLT</span>
+          <span class="tag-pill">XML</span>
+        </div>
+
+        <div class="arrow">↗</div>
+      </div>
+    </a>
+
+    <a href="assignment_13/application_output.htm" class="card">
+      <div class="top">
+        <div class="icon">✅</div>
+        <div class="badge">Asg 13</div>
+      </div>
+
+      <h3>APPLICATION USING XSLT</h3>
+
+      <p>Present final application output from XML and XSL transformations in a clean layout.</p>
+
+      <div class="bottom">
+        <div class="tags">
+          <span class="tag-pill">XML</span>
+          <span class="tag-pill">Output</span>
+        </div>
+
+        <div class="arrow">↗</div>
+      </div>
+    </a>
+
+  </div>
+
+  <footer>
+    <p>Built with <span>HTML & CSS</span> · Prakarsh Shende · Roll No. 21</p>
+    <p>Web Development Laboratory · Academic Portfolio</p>
+  </footer>
+
+</div>
+
+</body>
+</html>

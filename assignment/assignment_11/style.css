@@ -1,0 +1,15 @@
+students {
+    display: block;
+}
+
+student {
+    display: block;
+    margin: 10px;
+    padding: 10px;
+    border: 1px solid black;
+}
+
+name {
+    color: blue;
+    font-weight: bold;
+}
